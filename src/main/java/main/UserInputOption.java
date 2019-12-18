@@ -1,5 +1,7 @@
 package main;
 
+import i18n.ResourceHandler;
+
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
@@ -7,22 +9,22 @@ public enum UserInputOption {
   
   HELP(Option.builder("h")
       .longOpt("help")
-      .desc("Prints helping information")
+      .desc(ResourceHandler.getMessage("commandHelpDesc"))
       .hasArg(false)
       .build()),
   VERSION(Option.builder("v")
       .longOpt("version")
-      .desc("Prints the version")
+      .desc(ResourceHandler.getMessage("commandVersionDesc"))
       .hasArg(false)
       .build()),
   GUI(Option.builder("g")
       .longOpt("gui")
-      .desc("Enables load/save dialogs")
+      .desc(ResourceHandler.getMessage("commandGuiDesc"))
       .hasArg(false)
       .build()),
   FILE(Option.builder("f")
       .longOpt("file")
-      .desc("Passes file paths via console")
+      .desc(ResourceHandler.getMessage("commandFileDesc"))
       .numberOfArgs(3)
       .argName("global.json> <month.json> <output-file.tex")
       .build());

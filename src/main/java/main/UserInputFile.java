@@ -1,12 +1,26 @@
 package main;
 
+import i18n.ResourceHandler;
+
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public enum UserInputFile {
   
-  JSON_GLOBAL("Global JSON File", new FileNameExtensionFilter("JSON-File", "json"), FileOperation.OPEN),
-  JSON_MONTH("Month JSON File", new FileNameExtensionFilter("JSON-File", "json"), FileOperation.OPEN),
-  OUTPUT("Output Tex File", new FileNameExtensionFilter("Tex-File", "tex"), FileOperation.SAVE);
+  JSON_GLOBAL(
+    ResourceHandler.getMessage("inputGlobalJsonFile"),
+    new FileNameExtensionFilter(ResourceHandler.getMessage("jsonFile"), "json"),
+    FileOperation.OPEN
+  ),
+  JSON_MONTH(
+    ResourceHandler.getMessage("inputMonthJsonFile"),
+    new FileNameExtensionFilter(ResourceHandler.getMessage("jsonFile"), "json"),
+    FileOperation.OPEN
+  ),
+  OUTPUT(
+    ResourceHandler.getMessage("outputTexFile"),
+    new FileNameExtensionFilter(ResourceHandler.getMessage("texFile"), "tex"),
+    FileOperation.SAVE
+  );
   
   private String dialogTitel;
   private FileNameExtensionFilter fileFilter;
